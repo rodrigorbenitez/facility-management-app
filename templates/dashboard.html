@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<h4 class="page-header">Panel general</h2>
+<div class="container" style="width: 90%;">
+    <div class="row">
+        <div class=col-md-6>
+            <canvas id="myChart" ></canvas>
+        </div>
+        <div class=col-md-6>
+             <canvas id="myChart2"></canvas>
+         </div>     
+   </div>
+ </div>
+<div id="dashboardContainer" class="container">
+    <div class="row">
+        <div class="col-xs-12 col-md-12 orderCountBox" id="orderTotalOs">
+            <div>    
+             <h2 style="color: #232C33;" id="osTotales">{{totTicketsCount}}</h2>
+             <h5>órdenes de servicio totales</h5>
+             
+             <h5 style="display: none;"><span style="color: red;" id="alta">{{totTicketsCountalta}}</span> Prioridad alta  <span style="color: orange;" id="media">{{totTicketsCountmedia}}</span> Prioridad media  <span style="color: green;" id="baja">{{totTicketsCountbaja}}</span>Prioridad baja</h5>
+            
+            </div>
+            </div>
+            </div>
+    <div class="row">
+        <div  class="col-xs-12 col-md-6 orderCountBox">
+           <div>
+            <h2 style="color: #428BCA" id="osAbiertas">{{totTicketsCountOpen}}</h2>
+            <h5>Total de OS abiertas</h5>
+        </div>
+        </div>
+        <div class="col-xs-12 col-md-6 orderCountBox">
+            <div>
+            <h2 style="color: rgb(0, 201, 0);" id="OsEnCurso">{{totTicketsCountCourse}}</h2>
+            <h5>Total de OS en curso</h5>
+            </div> 
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-md-6 orderCountBox">
+            <div>
+            <h2 style="color: rgb(255, 165, 0);" id="OsPausadas">{{totTicketsCountPausada}}</h2>
+            <h5>Total de OS pausadas</h5> 
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-6 orderCountBox">
+            <div>
+            <h2 style="color: rgb(255, 0, 0)" id="OsCerradas">{{totTicketsCountClosed}}</h2>
+            <h5>Total de OS cerradas</h5>
+            </div>
+        </div>
+    </div>
+
+    </div>
+ 
+{% endblock %}
+        

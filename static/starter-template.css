@@ -1,0 +1,11 @@
+  
+body {
+    padding-top: 50px;
+    background: rgb(215,215,215);
+    background: linear-gradient(0deg, rgba(215,215,215,1) 0%, rgba(255,255,255,1) 100%);
+    background-attachment: fixed;
+  }
+  .starter-template {
+    padding: 40px 15px;
+    text-align: center;
+  }

@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<button class="btn blueBtn" id="print" onClick="printHtml()" ><i class="fas fa-file-download"></i>&nbsp; Descargar pdf</button>
+<hr>
+
+
+ <div id="containerPrint">       
+   <div class="container" id="osDetailContainer">
+            <div class="row">
+              <div class="col-md-12">
+                <h4>ORDEN DE TRABAJO N°: <span id="osNumber">{{ticket.id}}</span></h4>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+          <ul class="fa-ul">              
+            <li><span>Predio:</span> {{sites.name}}</li>
+            <li><span>Area:</span> {{area.name}}</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <ul class="fa-ul">
+            <li><span>Fecha inicio:</span> {{ticket.date_start.strftime('%d-%m-%Y')}} - <span>Fecha de fin:</span> {{ticket.date_end}}</li>
+            <li><span> Prioridad:</span> {{priority}}</li>
+          </ul>
+        </div>
+      </div>
+        <div class="row">
+          <div class="col-md-4">
+            <ul class="fa-ul">
+              <li><span>Solicitante:</span> {{petitioner.username}}</li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <ul class="fa-ul">
+              <li><span>Responsable:</span> {{responsible.username}}</li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+                <ul class="fa-ul">
+                <li><span>Estado:</span> {{ticket.status}}</li>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <ul class="fa-ul">
+              <li><span>Equipo:</span> {{asset.name}}</li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <ul class="fa-ul">
+              <li><span>Proveedor:</span> {{vendor.name}}</li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <ul class="fa-ul">
+              <li><span>Tipo de falla:</span> {{failure.name}}</li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <ul class="fa-ul">
+              <li><span>Descrpción:</span> {{ticket.description}}</li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <ul class="fa-ul">
+              <li><span>Notas:</span></li>
+            </ul>
+            {% for ticket_notes in ticket_notes %}
+            <ul class="fa-ul">
+             <li><span id="userNote">{{ticket_notes.username}}</span> agregó una nota el día {{ ticket_notes.date.strftime('%d-%m-%Y') }}</li>
+             <li>{{ ticket_notes.description }}</li>
+            </ul>
+             <hr>
+             {% else %}
+             <ul class="fa-ul">
+              <li>Sin notas adjuntas</li>
+             </ul>
+             
+             {% endfor %}
+          </div>
+        </div>
+  </div>
+</div> 
+{% endblock %}

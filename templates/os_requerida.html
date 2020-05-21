@@ -1,0 +1,154 @@
+{% extends "base.html" %}
+
+{% block content %}
+          <h4 class="sub-header">OS número: {{ticket.id}}</h4>
+          <div class="container">
+          <div class="row">
+          
+          <div class="col-md-6" id="requiredListContainer">
+
+
+
+          <form id="requiredList" class="form-horizontal" action="{{ url_for('os_requerida', ticket_id=ticket.id) }}" method="POST" id="formTicketRequerido">
+            <div class="form-group row">
+            <label for="date" class="col-sm-2 col-form-label">Descrpción:</label>
+            <div class="col-sm-8">
+            <input type="text" name="description" class="form-control" id="inputEmail3" placeholder="{{ticket.description}}">
+            </div>
+            </div>         
+                <div class="form-group row">
+                    <label for="responsible" class="col-sm-2 col-form-label">Solicitante: </label>
+                    <div class="col-sm-8">
+                        {{petitioner.username}}
+                    </div>
+                </div>  
+              <div class="form-group row">
+              <label for="responsible" class="col-sm-2 col-form-label">Responsable:</label>
+                <div class="col-sm-8">
+                  <select class="form-control" id="responsible" name="responsible" >
+                    <option value="" disabled selected hidden>{{responsible.username}}</option>
+                    {% for memberAll in memberAll %}
+                    <option name="responsible" value="{{memberAll.username}}">{{memberAll.username}}</option>
+                    {% endfor %}
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="site" class="col-sm-2 col-form-label">Predio</label>
+                <div class="col-sm-8">
+                  <select class="form-control" id="site" name="site" >
+                    <option value="" disabled selected hidden>{{sites.name}}</option>
+                    {% for sitesAll in sitesAll %}
+                    <option value="{{sitesAll.name}}">{{sitesAll.name}}</option>
+                    {% endfor %}
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="area" class="col-sm-2 col-form-label">Area:</label>
+                <div class="col-sm-8">
+                  <select class="form-control" id="area" name="area" >
+                    <option value="" disabled selected hidden>{{area.name}}</option>
+                    {% for areaAll in areaAll %}
+                    <option value="{{areaAll.name}}">{{areaAll.name}}</option>
+                    {% endfor %}
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="vendor" class="col-sm-2 col-form-label">Proveedor:</label>
+                <div class="col-sm-8">
+                  <select class="form-control" id="vendor" name="vendor" >
+                    <option value="" disabled selected hidden>{{vendor.name}}</option>
+                    {% for vendorAll in vendorAll %}
+                    <option value="{{vendorAll.name}}">{{vendorAll.name}}</option>
+                    {% endfor %}
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 col-form-label">Equipo:</label>
+                <div class="col-sm-8">
+                  <select class="form-control" id="cars" name="asset" >
+                    <option value="" disabled selected hidden>{{asset.name}}</option>
+                    {% for assetAll in assetAll %}
+                    <option value="{{assetAll.name}}">{{assetAll.name}}</option>
+                    {% endfor %}
+                  </select>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="dateStart" class="col-sm-2 col-form-label">Fecha de inicio:</label>
+                <div class="col-sm-3">
+                <input placeholder="{{ticket.date_start.strftime('%d-%m-%Y')}}" class="form-control" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="dateStart" name="dateStart">
+                </div>
+                </div>
+              <div class="form-group">
+                    <label for="priority" class="col-sm-2 col-form-label">Prioridad</label>
+                    <div class="col-sm-8">
+                      <select class="form-control" id="priority" name="priority" >
+                        <option value="" disabled selected hidden>{{priority}}</option>
+                        <option value="alta">Alta</option>
+                        <option value="media">Media</option>
+                        <option value="baja">Baja</option>
+                      </select>
+                    </div>
+              </div>
+              <div class="form-group">
+                <label for="failure" class="col-sm-2 col-form-label">Tipo de falla</label>
+                <div class="col-sm-8">
+                  <select class="form-control" id="failure" name="failure" >
+                    <option value="" disabled selected hidden>{{failure.name}}</option>
+                    {% for failureAll in failureAll %}
+                    <option value="{{failureAll.name}}">{{failureAll.name}}</option>
+                    {% endfor %}
+                  </select>
+                </div>
+              </div>
+                <div class="form-group row">
+                <label for="status" class="col-sm-2 col-form-label">Estado:</label>
+                <div class="col-sm-8">
+                <select class="form-control" id="status" name="status" id="status">
+                  <option value="" disabled selected hidden>{{ticket.status}}</option>
+                  <option value="abierta">Abierta</option>
+                  <option value="en curso">En curso</option>
+                  <option value="pausada">Pausada</option>
+                  <option value="cerrada">Cerrada</option>
+                </select>
+                </div>
+                </div>
+                <div class="form-group row">
+                <label for="dateEnd" class="col-sm-2 col-form-label">Fecha de fin:</label>
+                <div class="col-sm-8">
+                <input placeholder="{{ticket.date_end}}" class="form-control" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" name="dateEnd" id="dateEnd">
+                </div>
+                </div>
+                <div class="form-group row">
+                    <label for="notasTicketReq" class="col-sm-2 col-form-label">Notas</label>
+                    <div class="col-sm-8">
+                    <textarea class="form-control" id="notasTicketReq" rows="3" name="ticketNoteReq"></textarea>
+                  </div>
+                  </div>
+                <button class="btn blueBtn" type="submit">Modificar OS</button>
+        </form>
+      </div>
+      <div class="col-md-6">
+        <h4>Notas</h4>
+       {% for ticket_notes in ticket_notes %}
+        <p><span id="userNote">{{ticket_notes.username}}</span> agregó una nota el día {{ ticket_notes.date.strftime('%d-%m-%Y') }}</p>
+        <p>{{ ticket_notes.description }}</p>
+        <hr>
+        {% else %}
+        <h5>Sin notas adjuntas</h5>
+        {% endfor %}
+ 
+ 
+ 
+ 
+       </div>
+       
+       
+       </div>
+       </div>
+
+{% endblock %}

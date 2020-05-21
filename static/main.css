@@ -1,0 +1,179 @@
+#formTicketGenerator{width: 60%;
+margin: 0 auto;
+}
+
+#TicketSearchContainer {width: 80%;}
+#equiposTabla{width: 40%;}
+#searchBarContainer, #searchBy{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+#tableInputSearch, #assignedTicketsSearch, #petitionerTicketsSearch {width: 400px;
+    border-radius: 17px;
+    margin-right: 10px;
+}
+#tableInputSearch.empty, #assignedTicketsSearch.empty, #petitionerTicketsSearch.empty {
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+}
+#cantOs{font-style: italic;
+    padding-top: 6px;
+    margin-right: 10vw;
+}
+
+.blueBtn{ 
+    color: #FFFFFF; 
+    background-color: #428BCA; 
+    border-color: #428BCA;
+    border-radius: 17px; 
+  } 
+   
+  .blueBtn:hover, 
+  .blueBtn:focus, 
+  .blueBtn:active, 
+  .blueBtn.active, 
+  .open .dropdown-toggle.blueBtn { 
+    color: #FFFFFF; 
+    background-color: #266194; 
+    border-color: #428BCA; 
+  } 
+   
+  .blueBtn:active, 
+  .blueBtn.active, 
+  .open .dropdown-toggle.blueBtn { 
+    background-image: none; 
+  } 
+   
+  .blueBtn.disabled, 
+  .blueBtn[disabled], 
+  fieldset[disabled] .blueBtn, 
+  .blueBtn.disabled:hover, 
+  .blueBtn[disabled]:hover, 
+  fieldset[disabled] .blueBtn:hover, 
+  .blueBtn.disabled:focus, 
+  .blueBtn[disabled]:focus, 
+  fieldset[disabled] .blueBtn:focus, 
+  .blueBtn.disabled:active, 
+  .blueBtn[disabled]:active, 
+  fieldset[disabled] .blueBtn:active, 
+  .blueBtn.disabled.active, 
+  .blueBtn[disabled].active, 
+  fieldset[disabled] .blueBtn.active { 
+    background-color: #428BCA; 
+    border-color: #428BCA; 
+  } 
+   
+  .blueBtn .badge { 
+    color: #428BCA; 
+    background-color: #FFFFFF;
+    
+  }
+#crearOsBtn{align-self: flex-end;
+}  
+#containerTicketGenerator{
+    width: 900px;
+}
+#column, #column2{width: 160px;
+  font-family: 'FontAwesome',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  
+}
+#searchFor{font-style: italic;
+  padding-top: 6px;
+  margin-right: 10px;
+}
+
+
+.orderCountBox  {
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 10px;
+
+}
+.orderCountBox div{text-align: center;
+  
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  flex-direction : column;
+  background-color: #FFFFFF;
+  border: 1px solid rgb(179, 209, 235);
+ 
+  }
+
+#orderTotalOs div{
+  margin-bottom: 0px;
+}
+
+#orderTotalOs div h2{flex-grow : 1;
+  font-weight: bold;
+
+}
+#orderTotalOs div h6{flex-grow : 2;
+}
+
+#dashboardContainer{
+  width: 80%;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 30px;
+
+}
+#tableOS{  background-color: #FFFFFF;
+  border: 1px solid rgb(179, 209, 235);}
+#TableOsAssigned, #TableOsRequired{width: 90%;
+  background-color: #FFFFFF;
+  border: 1px solid rgb(179, 209, 235);
+
+}
+#assignedList, #requiredList{width: 500px;}
+@media (max-width: 768px) {
+ 
+  #assignedList, #requiredList{width: 300px;}
+
+}
+#assignedList li, #requiredList li{margin: 0 0 3px 0;
+}
+#userNote, #assignedList span, #requiredList label, #formTicketGenerator span, #osDetailContainer span{font-size: 15px;
+  color: #266194;
+  font-weight: bold;
+
+}
+#osDetailContainer #osNumber{font-size: 1em; font-weight: bolder}
+#formTicketGenerator li{margin-bottom: 5px;}
+
+#osDetailContainer{
+  width: 90%;
+  background-color: white;
+  border: 1px solid rgb(134, 134, 146);
+
+}
+
+
+#osDetailContainer div{ border: 1px solid rgb(134, 134, 146);}
+#osDetailContainer .row{ border: none;}
+#containerPrint{background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding-top: 20px;
+  flex-direction : column;
+
+}
+.chart-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}

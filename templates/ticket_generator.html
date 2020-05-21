@@ -1,0 +1,103 @@
+{% extends "bootstrap/base.html" %}
+{% block styles %}
+{{super()}}
+<script src="https://kit.fontawesome.com/5c33528632.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="{{url_for('.static', filename='dashboard.css')}}">
+<link rel="stylesheet" href="{{url_for('.static', filename='main.css')}}">
+{% endblock %}
+{% block body %}
+<h1 class="sub-header" style="text-align: center;">Órden de trabajo</h1>
+  <div class="container" id="formTicketGenerator">
+  <form class="form-horizontal" action="/generar_os" method="POST" id="formTicketGenerator">
+    <div class="form-group">
+      <label for="inputEmail3" class="control-label">Descripción</label>  
+        <input type="text" name="description" class="form-control" id="inputEmail3" placeholder="Descripción" required>
+    </div>
+    <div class="form-group">
+      <label for="inputEmail3" class="control-label">Responsable</label>
+        <select class="form-control" id="responsible" name="responsible" required>
+          <option value="" disabled selected hidden>Responsable</option>
+          {% for member in member %}
+          <option name="responsible" value="{{member.username}}">{{member.username}}</option>
+          {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+      <label for="inputEmail3" class="control-label">Predio</label>
+        <select class="form-control" id="site" name="site" required>
+          <option value="" disabled selected hidden>elegir predio</option>
+          {% for sites in sites %}
+          <option value="{{sites.name}}">{{sites.name}}</option>
+          {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+      <label for="inputEmail3" class="control-label">Area</label>
+        <select class="form-control" id="area" name="area" required>
+          <option value="" disabled selected hidden>Elegir área</option>
+          {% for area in area %}
+          <option value="{{area.name}}">{{area.name}}</option>
+          {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+      <label for="inputEmail3" class=" control-label">Proveedor</label>
+        <select class="form-control" id="vendor" name="vendor" required>
+          <option value="" disabled selected hidden>Elegir proveedor</option>
+          {% for vendor in vendor %}
+          <option value="{{vendor.name}}">{{vendor.name}}</option>
+          {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+      <label class=" control-label">Equipo</label>
+        <select class="form-control" id="cars" name="asset" required>
+          <option value="" disabled selected hidden>Elegir Equipo</option>
+          {% for asset in asset %}
+          <option value="{{asset.name}}">{{asset.name}}</option>
+          {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+      <label class=" control-label">Fecha de inicio</label>
+      <input type="date" id="fechaInicio" name="fechaInicio" class="form-control" format="dd/mm/yyyy" placeholder="DD-MM-YYYY" required>
+    </div>
+    <div class="form-group">
+      <label for="inputEmail3" class=" control-label">Prioridad</label>
+        <select class="form-control" id="priority" name="priority" required>
+          <option value="" disabled selected hidden>Definir prioridad</option>
+          <option value="alta">Alta</option>
+          <option value="media">Media</option>
+          <option value="baja">Baja</option>
+        </select>
+    </div>
+    <div class="form-group">
+      <label for="inputEmail3" class=" control-label">Tipo de falla</label>
+        <select class="form-control" id="failure" name="failure" required>
+          <option value="" disabled selected hidden>Elegir tipo de falla</option>
+          {% for failure in failure %}
+          <option value="{{failure.name}}">{{failure.name}}</option>
+          {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+      <div style="text-align: center;">
+        <button type="submit" class="btn blueBtn"><i class="fas fa-cog"></i> Generar Órden de trabajo</button>
+    </div>
+  </form>
+</div>
+
+
+{% endblock %}  
+{% block scripts %}
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="{{url_for('.static', filename='Scripts.js')}}"></script>
+{% endblock %}  
+
+
+
+      
+
+

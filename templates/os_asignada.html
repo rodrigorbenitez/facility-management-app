@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content %}
+          <h4 class="sub-header">OS número: {{ticket.id}}</h4>
+          <div class="container">
+            <div class="row">
+
+          <div class="col-md-6" id="assignedListContainer">
+
+          <form id="assignedList" class="form-horizontal" action="{{ url_for('os_asignada', ticket_id=ticket.id) }}" method="POST" id="formTicketGenerator">
+          <ul class="fa-ul">
+              <li><span>Descrpción:</span> {{ticket.description}}</li>
+              <li><span>Solicitante:</span> {{petitioner.username}}</li>
+              <li><span>Responsable:</span> {{responsible.username}}</li>
+              <li><span>Predio:</span> {{sites.name}}</li>
+              <li><span>Area:</span> {{area.name}}</li>
+              <li><span>Equipo:</span> {{asset.name}}</li>
+              <li><span>Proveedor:</span> {{vendor.name}}</li>
+              <li><span>Fecha inicio:</span> {{date_start.strftime('%d-%m-%Y')}}</li>
+              <li><span>Prioridad:</span> {{priority}}</li>
+              <li><span>Tipo de falla:</span> {{failure.name}}</li>
+                <li><span>Estado:</span>
+                  <select class="form-control" id="status" name="status">
+                    <option value="" disabled selected hidden>{{ticket.status}}</option>
+                    <option value="abierta">Abierta</option>
+                    <option value="en curso">En curso</option>
+                    <option value="pausada">Pausada</option>
+                    <option value="cerrada">Cerrada</option>
+                  </select>
+                </li>
+                <li><span>Fecha de fin:</span>
+                <input type="date" name="fechaFin" class="form-control" id="fechaFin" placeholder="{{ticket.date_end}}">
+                </li>
+          <li><span>Notas:</span>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="ticketNote"></textarea>
+        </li>
+        </ul>
+        <button class="btn blueBtn" type="submit" style="margin-left: 30px;">Modificar OS</button>
+        </form>
+      </div>
+      <div class="col-md-6">
+       <h4>Notas</h4>
+      {% for ticket_notes in ticket_notes %}
+       <p><span id="userNote">{{ticket_notes.username}}</span> agregó una nota el día {{ ticket_notes.date.strftime('%d-%m-%Y') }}</p>
+       <p>{{ ticket_notes.description }}</p>
+       <hr>
+       {% else %}
+       <h5>Sin notas adjuntas</h5>
+       {% endfor %}
+
+
+
+
+      </div>
+      
+      
+      </div>
+      </div>
+
+
+
+{% endblock %}

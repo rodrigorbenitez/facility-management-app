@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h4 class="page-header">Mis órdenes de trabajo</h1>
+<h4 class="sub-header">OS Asignadas: <span><i id="slideToggle1" class="fas fa-sort"></i></span></h2>
+
+
+<div id="searchBarContainer">
+<input class="form-control empty" id="assignedTicketsSearch" type="text" placeholder="&#xf002"><div id="cantOs"><p>{{totTicketsCount}} órdenes de trabajo</p></div>
+</div>
+<div class="container" id="searchBy">
+  <div id="searchFor">Buscar por:</div>
+    <select class="form-control" id="column" name="column" required>
+      <option value="" ><span style="color:#428BCA ;">&#xf002</span> Todos</option>
+      <option value="0">ID</option>
+      <option value="1">Fecha de entrada</option>
+      <option value="2">Descripción</option>
+      <option value="3">Prioridad</option>
+      <option value="4">Estado</option>
+      <option value="5">Predio</option>
+    </select>
+</div>
+
+
+
+<div class="container" id="assignedOsContainer">
+ <div class="table-responsive">
+  <table class="table table-sm" id="TableOsAssigned">
+    <thead>
+      <tr>
+        <th scope="col" style="width:5%">ID</th>
+        <th scope="col" style="width:5%">Detalle</th>
+        <th scope="col" style="width:20%">Fecha de entrada</th>
+        <th scope="col" style="width:30%">Descripción</th>
+        <th scope="col" style="width:10%">Responsable</th>
+        <th scope="col" style="width:10%">Prioridad</th>
+        <th scope="col" style="width:10%">Estado</th>
+        <th scope="col" style="width:10%">Predio</th>
+      </tr>
+    </thead>
+    <tbody id="myTable" class="tbodyAssigned"> 
+      {% for ticket in ticket %}
+      <tr>
+        <td><a href="{{url_for('os_asignada', ticket_id=ticket.id)}}">{{ticket.id}}</a></td>
+        <td><a href="{{url_for('os_detalle', ticket_id=ticket.id)}}"><i class="fas fa-eye"></i></a></td>
+        <td>{{ticket.date_start.strftime('%d-%m-%Y')}}</td>
+        <td>{{ticket.description}}</td>
+        <td>{{ticket.username}}</td>
+        <td id="priority">{{ticket.priority}}</td>
+        <td id="status">{{ticket.status}}</td>
+        <td >{{ticket.siteName}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+ </div>
+</div>
+
+
+
+
+<h4 class="sub-header">OS requeridas: <span><i id="slideToggle2" class="fas fa-sort"></i></span></h2>
+  <div id="searchBarContainer" id="tablaOsRequeridas">
+    <input class="form-control empty" id="petitionerTicketsSearch" type="text" placeholder="&#xf002"><div id="cantOs"><p>{{totTicketsCount2}} órdenes de trabajo</p></div>
+    </div>
+    <div class="container" id="searchBy">
+      <div id="searchFor">Buscar por:</div>
+        <select class="form-control" id="column2" name="column2" required>
+          <option value="" ><span style="color:#428BCA ;">&#xf002</span> Todos</option>
+          <option value="0">ID</option>
+          <option value="1">Fecha de entrada</option>
+          <option value="2">Descripción</option>
+          <option value="3">Prioridad</option>
+          <option value="4">Estado</option>
+          <option value="5">Predio</option>
+        </select>
+    </div>
+
+
+  <div class="container" id="requiredOsContainer">
+   <div class="table-responsive">
+    <table class="table table-sm" id="TableOsRequired">
+      <thead>
+        <tr>
+          <th scope="col" style="width:5%">ID</th>
+          <th scope="col" style="width:5%">Detalle</th>
+          <th scope="col" style="width:20%">Fecha de entrada</th>
+          <th scope="col" style="width:30%">Descripción</th>
+          <th scope="col" style="width:10%">Responsable</th>
+          <th scope="col" style="width:10%">Prioridad</th>
+          <th scope="col" style="width:10%">Estado</th>
+          <th scope="col" style="width:10%">Predio</th>
+        </tr>
+      </thead>
+      <tbody id="myTable" class="tbodyRequired"> 
+        {% for ticketreq in ticketreq %}
+        <tr>
+          <td><a href="{{url_for('os_requerida', ticket_id=ticketreq.id)}}">{{ticketreq.id}}</a></td>
+          <td><a href="{{url_for('os_detalle', ticket_id=ticketreq.id)}}"><i class="fas fa-eye"></i></a></td>
+          <td>{{ticketreq.date_start.strftime('%d-%m-%Y')}}</td>
+          <td>{{ticketreq.description}}</td>
+          <td>{{ticketreq.username}}</td>
+          <td id="priority">{{ticketreq.priority}}</td>
+          <td id="status">{{ticketreq.status}}</td>
+          <td>{{ticketreq.siteName}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+   </div>
+  </div>
+
+  
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
