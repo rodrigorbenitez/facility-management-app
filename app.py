@@ -440,7 +440,7 @@ def orders_list():
     ticket= db.session.query(Tickets.id, Tickets.date_start, Tickets.description, Member.username, Tickets.priority, Tickets.status, Sites.name.label('siteName')).filter(and_(Tickets.responsible_id==Member.id, Tickets.responsible_id==responsible.id, Tickets.site_id==Sites.id, Tickets.status!="cerrada")).order_by(Tickets.date_start.desc()).all()
     ticketreq = db.session.query(Tickets.id, Tickets.date_start, Tickets.description, Member.username, Tickets.priority, Tickets.status, Sites.name.label('siteName')).filter(and_(Tickets.responsible_id==Member.id, Tickets.petitioner_id==petitioner.id, Tickets.site_id==Sites.id)).order_by(Tickets.date_start.desc()).all()
     
-    return render_template('orders_list.html', name=current_user.username, ticket=ticket, totTicketsCount2=totTicketsCount2, totTicketsCount=totTicketsCount, ticketreq=ticketreq)
+    return render_template('orders_List.html', name=current_user.username, ticket=ticket, totTicketsCount2=totTicketsCount2, totTicketsCount=totTicketsCount, ticketreq=ticketreq)
 
 
 
