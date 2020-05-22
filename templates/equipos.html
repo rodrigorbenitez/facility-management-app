@@ -7,6 +7,16 @@
   <div id="searchBarContainer">
   <input class="form-control empty" id="tableInputSearch" type="text" placeholder="&#xf002"><div id="cantOs"><p>{{assetsCount}} Equipos</p></div>
   </div>
+  <div class="container" id="searchBy">
+    <div id="searchFor">Buscar por:</div>
+      <select class="form-control" id="column" name="column" required>
+        <option value="" ><span style="color:#428BCA ;">&#xf002</span> Todos</option>
+        <option value="0">ID</option>
+        <option value="1">Detalle</option>
+        <option value="2">Nombre</option>
+        <option value="3">Predio</option>
+      </select>
+  </div>
     
   <div class="table-responsive" id="equiposTabla">
   <table class="table table-sm" id="tableOS">

@@ -36,6 +36,8 @@ $(document).ready(function() {
 
 })
 
+
+
 //----------------buscador os asignadas------------------------//
   $(document).ready(function(){
     $("#assignedTicketsSearch").on("keyup", function() {
