@@ -409,7 +409,7 @@ def os_detalle(ticket_id):
  
    
     if ticket.date_end==None:
-        ticket.date_end="--"
+        ticket.date_end=None
     else:
         ticket.date_end=ticket.date_end.strftime('%d-%m-%Y')
     
