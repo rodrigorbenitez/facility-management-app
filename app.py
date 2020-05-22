@@ -432,10 +432,10 @@ def orders_list():
     totTicketsCount2=Tickets.query.filter(and_(Tickets.petitioner_id==petitioner.id, Tickets.status!="cerrada")).count()
 
     if totTicketsCount==0:
-        totTicketsCount="Sin OS abiertas"
+        totTicketsCount="0"
     
     if totTicketsCount2==0:
-        totTicketsCount2="Sin OS requeridas"
+        totTicketsCount2="0"
     
     ticket= db.session.query(Tickets.id, Tickets.date_start, Tickets.description, Member.username, Tickets.priority, Tickets.status, Sites.name.label('siteName')).filter(and_(Tickets.responsible_id==Member.id, Tickets.responsible_id==responsible.id, Tickets.site_id==Sites.id, Tickets.status!="cerrada")).order_by(Tickets.date_start.desc()).all()
     ticketreq = db.session.query(Tickets.id, Tickets.date_start, Tickets.description, Member.username, Tickets.priority, Tickets.status, Sites.name.label('siteName')).filter(and_(Tickets.responsible_id==Member.id, Tickets.petitioner_id==petitioner.id, Tickets.site_id==Sites.id)).order_by(Tickets.date_start.desc()).all()

@@ -4,6 +4,13 @@ margin: 0 auto;
 
 #TicketSearchContainer {width: 80%;}
 #equiposTabla{width: 40%;}
+  /*---------------for mobile--------------*/
+@media (max-width: 768px) {
+  #equiposTabla{width: 95%;}
+  #formTicketGenerator{width: 90%;}
+  #TicketSearchContainer {width: 95%;}
+
+}
 #searchBarContainer, #searchBy{
     display: flex;
     flex-wrap: wrap;
