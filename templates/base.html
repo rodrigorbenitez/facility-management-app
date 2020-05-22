@@ -26,10 +26,11 @@ Facility App
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><i class="far fa-user"></i>{{name}}</li>
-            <li><a href="{{ url_for('dashboard') }}">Panel general<span class="sr-only">(current)</span></a></li>
-            <li><a style="cursor:pointer;" onclick="window.open('/generar_os')">Generar OS</a></li>
-            <li><a href="{{ url_for('ticket_search') }}">Buscador OS</a></li>
-            <li><a href="{{ url_for('orders_list') }}">Mis órdenes</a></li>
+            <li><a href="{{ url_for('dashboard') }}"><i class="fas fa-tachometer-alt"></i> Panel general<span class="sr-only">(current)</span></a></li>
+            <li><a style="cursor:pointer;" onclick="window.open('/generar_os')"><i class="fas fa-cog"></i> Generar OS</a></li>
+            <li><a href="{{ url_for('ticket_search') }}"><i class="fas fa-search"></i> Buscador OS</a></li>
+            <li><a href="{{ url_for('orders_list') }}"><i class="fas fa-briefcase"></i> Mis órdenes</a></li>
+            <li><a href="{{ url_for('assets') }}"><i class="fas fa-dice-d6"></i> Equipos</a></li>
             <li><a href="{{ url_for('logout') }}">Log Out</a></li>
           </ul>
         </div>
