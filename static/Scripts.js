@@ -246,7 +246,7 @@ var myDoughnutChart = new Chart(ctx, {
   type: 'doughnut',
   data: {
     datasets: [{
-        data: [media, baja, alta], backgroundColor: ['rgb(255, 204, 0)', 'rgb(66, 139, 202)', 'rgb(255, 0, 0)']
+        data: [media, baja, alta], backgroundColor: ['rgb(255, 204, 0)', 'rgb(255, 0, 0)' , 'rgb(66, 139, 202)']
     }],labels: [
       'Prioridad media',
       'Prioridad alta',
