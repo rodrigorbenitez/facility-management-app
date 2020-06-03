@@ -1,6 +1,5 @@
 # facility-management-app
 A maintenance app tracker in flask
 
-Aplicación para el seguimiento de órdenes de trabajo de mantenimiento o servicios.
-Features: Login de usuario, Mail a usuarios, Descarga de informes en PDF, Modificación y creación datos en base de datos SQL.
+Application for monitoring maintenance or service work orders. Features: User login, Mail to users, Download PDF reports, Modification and creation of data in SQL database. URL:
 URL: https://mantenimientoapp.herokuapp.com/
