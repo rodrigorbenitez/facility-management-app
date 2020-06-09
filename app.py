@@ -167,12 +167,6 @@ def asset_detail(equipo_id):
 
     return render_template('detalle_equipos.html',name=current_user.username, equipo=equipo, equipo_id=equipo_id, ticketAsset=ticketAsset, ticketAssetCount=ticketAssetCount)
 
-#-------------------------------------PROVEEDORES-----------------------------------#
-@app.route('/proveedores')
-@login_required
-def vendors():
-    return render_template('index.html')
-
 
 #----------------------------------GENERADOR DE OS----------------------------------#
 
@@ -213,7 +207,7 @@ def generar_os():
         db.session.add(ticket)
         db.session.commit()
 
-
+        #------email sending-----------#
 
         msg = Message("Orden de servicio asignada", sender='rb@cbngroup.com.ar', recipients=[email])
 
