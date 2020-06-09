@@ -4,7 +4,7 @@ Note: I made this project for the Facility deparment of CBN Group SA in Buenos A
 ## Live preview link <a href = 'https://mantenimientoapp.herokuapp.com/' > https://mantenimientoapp.herokuapp.com/ </a>
 
 
-# `App name:` Facility App'
+# `App name:` Facility App
 
 ``Breif description:`` Application for monitoring maintenance or service work orders. Features: User login, Mail to users, Download PDF reports, Modification and creation of data in SQL database, and email sending.
 
