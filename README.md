@@ -1,10 +1,5 @@
 # facility-management-app
-A maintenance app tracker in flask
-
-Application for monitoring maintenance or service work orders. Features: User login, Mail to users, Download PDF reports, Modification and creation of data in SQL database. URL:
-URL: https://mantenimientoapp.herokuapp.com/
-# facility-management-app
-Note: I made this project for the Facility deparment of CBN Group SA.<br>
+Note: I made this project for the Facility deparment of CBN Group SA in Buenos Aires, Argentina.<br>
 
 ## Live preview link <a href = 'https://mantenimientoapp.herokuapp.com/' > https://mantenimientoapp.herokuapp.com/ </a>
 
