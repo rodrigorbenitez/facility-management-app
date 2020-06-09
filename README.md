@@ -6,7 +6,7 @@ Note: I made this project for the Facility deparment of CBN Group SA in Buenos A
 
 # `App name:` Facility App'
 
-``Breif description:`` Application for monitoring maintenance or service work orders. Features: User login, Mail to users, Download PDF reports, Modification and creation of data in SQL database.
+``Breif description:`` Application for monitoring maintenance or service work orders. Features: User login, Mail to users, Download PDF reports, Modification and creation of data in SQL database, and email sending.
 
 * For a demo use the following login details:
 USER: "user1"
